@@ -69,7 +69,7 @@
   /* ========== DAY MENU ========== */
   const menu = $("#day-menu");
   menu.innerHTML = ITINERARY.map((d, i) => `
-    <button class="day-chip" role="tab" id="tab-${d.date}" data-date="${d.date}" aria-selected="false" aria-controls="day-panel">
+    <button class="day-chip${d.notice ? " has-notice" : ""}" role="tab" id="tab-${d.date}" data-date="${d.date}" aria-selected="false" aria-controls="day-panel">
       <span class="d-sub">Day ${i + 1}</span>
       <span class="d-num">${md(d.date)}</span>
       <span class="d-sub">週${wk(d.date)}</span>
@@ -95,6 +95,7 @@
     });
     $("#day-panel").setAttribute("aria-labelledby", `tab-${d.date}`);
     $("#day-panel").innerHTML = `
+      ${d.notice ? `<div class="day-notice" role="alert"><span aria-hidden="true">⚠</span>${esc(d.notice)}</div>` : ""}
       <figure class="day-hero">
         ${img ? `<img src="${img.src}" alt="${esc(img.alt)}" loading="lazy" onerror="this.remove()"><figcaption>${esc(img.alt)}・${esc(img.author)} / ${esc(img.license)}</figcaption>` : ""}
       </figure>

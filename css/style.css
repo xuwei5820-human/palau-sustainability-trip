@@ -145,6 +145,8 @@ img { max-width: 100%; display: block; }
 .day-chip[aria-selected="true"] .d-sub { color: #9fd3f5; }
 
 .day-panel { background: #fff; border-radius: var(--radius); overflow: hidden; }
+.day-notice { display: flex; align-items: center; gap: 10px; padding: 14px 24px; background: #fff4e5; color: #8a4b00; font-weight: 600; font-size: 15px; border-bottom: 1px solid #ffe0b2; }
+.day-chip.has-notice .d-sub:first-child::after { content: " ⚠"; color: #e08a00; }
 .day-hero { position: relative; aspect-ratio: 16 / 8; background: linear-gradient(135deg, var(--ocean-deep), var(--ocean)); overflow: hidden; }
 .day-hero img { width: 100%; height: 100%; object-fit: cover; }
 .day-hero figcaption { position: absolute; right: 12px; bottom: 10px; font-size: 11px; color: rgba(255,255,255,.85); background: rgba(0,0,0,.35); padding: 3px 8px; border-radius: 6px; }

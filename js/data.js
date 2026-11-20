@@ -134,15 +134,16 @@ const ITINERARY = [
     ],
   },
   {
+    /* 行程修正：因颱風外圍環流、洛克群島船班停駛，與 8/10 對調 */
     date: "2027-08-06",
-    title: "海域周邊人文生態體察 I",
-    theme: "海洋",
-    summary: "洛克群島海域探勘；BUL 垂釣文化體驗。",
-    sdg: [14],
-    img: "reef",
+    notice: "因海況不佳，行程已調整",
+    title: "永續生態田野調查",
+    theme: "陸域",
+    summary: "帛琉當地特有種鳥類與生態解析。",
+    sdg: [15],
+    img: "bird",
     spots: [
-      { name: "洛克群島海域", desc: "海域生態探勘。", map: "Rock Islands Southern Lagoon, Palau" },
-      { name: "BUL 垂釣文化體驗", desc: "認識帛琉傳統禁漁制度與永續漁法。", map: "Koror Palau" },
+      { name: "鳥類生態觀察（地點依當天安排）", desc: "認識帛琉特有種鳥類與棲地保育。", map: "Palau bird watching" },
     ],
   },
   {
@@ -181,14 +182,16 @@ const ITINERARY = [
     ],
   },
   {
+    /* 行程修正：與 8/06 對調 */
     date: "2027-08-10",
-    title: "永續生態田野調查",
-    theme: "陸域",
-    summary: "帛琉當地特有種鳥類與生態解析。",
-    sdg: [15],
-    img: "bird",
+    title: "海域周邊人文生態體察 I",
+    theme: "海洋",
+    summary: "洛克群島海域探勘；BUL 垂釣文化體驗。",
+    sdg: [14],
+    img: "reef",
     spots: [
-      { name: "鳥類生態觀察（地點依當天安排）", desc: "認識帛琉特有種鳥類與棲地保育。", map: "Palau bird watching" },
+      { name: "洛克群島海域", desc: "海域生態探勘。", map: "Rock Islands Southern Lagoon, Palau" },
+      { name: "BUL 垂釣文化體驗", desc: "認識帛琉傳統禁漁制度與永續漁法。", map: "Koror Palau" },
     ],
   },
   {
@@ -259,6 +262,7 @@ const CHECKLIST = [
       "防滑涼鞋／溯溪鞋（瀑布步道）",
       "帽子、太陽眼鏡",
       "薄外套（飛機、室內冷氣）",
+      "雨衣／防水袋",
     ],
   },
   {
