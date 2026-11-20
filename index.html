@@ -1,0 +1,326 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>帛琉南島永續實踐計畫</title>
+  <meta name="description" content="N-10-3 帛琉南島永續實踐計畫：給錄取學員的行程、行前清單、每日預算試算與記帳。" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Fonts: Geist + Noto Sans TC (中文) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: "#1d1d1f",
+            mist: "#f5f5f7",
+            ocean: { DEFAULT: "#0077b6", deep: "#023e6b", light: "#e3f1fa" },
+          },
+          fontFamily: { sans: ["Geist", "Noto Sans TC", "system-ui", "sans-serif"] },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script>
+    /* 允許動態時才加上初始隱藏狀態；8 秒後若動畫庫未載入則自動還原 */
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("js-motion");
+      setTimeout(function () { if (!window.gsap || !window.Motion) document.documentElement.classList.remove("js-motion"); }, 8000);
+    }
+  </script>
+</head>
+<body class="font-sans text-ink bg-white antialiased">
+
+  <a href="#planner" class="skip-link">跳到行程</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="site-nav" id="top">
+    <nav class="nav-inner">
+      <a href="#hero" class="nav-logo" data-scroll>Palau<span>2027</span></a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="開啟選單">
+        <span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about" data-scroll>計畫</a></li>
+        <li><a href="#training" data-scroll>行前培訓</a></li>
+        <li><a href="#itinerary" data-scroll>每日行程</a></li>
+        <li><a href="#checklist" data-scroll>行前清單</a></li>
+        <li><a href="#ledger" data-scroll>記帳</a></li>
+        <li><a href="#notes" data-scroll>心得筆記</a></li>
+        <li><a href="#cautions" data-scroll>使用注意</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section id="hero" class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow text-ocean-light/80" data-reveal>N-10-3 ・ 青年百億海外圓夢基金 ・ 海外翱翔組</p>
+        <h1 class="hero-title" id="hero-title">帛琉<br>南島永續<br>實踐計畫</h1>
+        <p class="hero-sub" data-reveal>2027.07.29 — 08.12　15 天・6 項 SDG・1 群南島轉譯者</p>
+        <div class="hero-cta" data-reveal>
+          <a href="#itinerary" class="btn btn-light" data-scroll>查看每日行程</a>
+          <a href="#checklist" class="btn btn-ghost" data-scroll>行前準備清單 →</a>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true"><span></span></div>
+    </section>
+
+    <!-- ============ PINNED VISUAL ============ -->
+    <section id="about" class="pin-section">
+      <div class="pin-stage">
+        <figure class="pin-frame">
+          <img id="pin-img" src="" alt="帛琉洛克群島鳥瞰" />
+          <div class="pin-shade"></div>
+        </figure>
+        <div class="pin-copy">
+          <p class="pin-line eyebrow">給錄取學員的一份旅程手冊</p>
+          <h2 class="pin-line pin-heading">不是觀光，<br>是一場田野。</h2>
+          <p class="pin-line pin-body">
+            15 天，從洛克群島的硨磲海域、艾萊州的百年男人會館，到魚市場與超級市場的產銷鏈。我們以南島同族的視角，看見帛琉如何把永續寫進法律、部落與日常。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ESG STICKY ============ -->
+    <section id="esg" class="section bg-mist">
+      <div class="container-x esg-grid">
+        <div class="esg-sticky">
+          <p class="eyebrow text-ocean">田野線索</p>
+          <h2 class="section-title">把 ESG<br>變成看得見的東西。</h2>
+          <p class="section-lead">行前培訓的核心方法：在海洋、森林與部落裡，辨識三種永續足跡。</p>
+        </div>
+        <div class="esg-cards">
+          <article class="esg-card">
+            <span class="esg-letter">E</span>
+            <h3>環境 Environment</h3>
+            <p>在海洋與森林示範區中，找出「減塑、低碳、防曬乳禁用」的環境治理足跡。</p>
+            <ul><li>珊瑚友善防曬</li><li>硨磲貝復育</li><li>藍炭紅樹林</li></ul>
+          </article>
+          <article class="esg-card">
+            <span class="esg-letter">S</span>
+            <h3>社會 Social</h3>
+            <p>從傳統會所 Bai 的維護、在地導覽員的組成，觀察部落主體性與文化傳承。</p>
+            <ul><li>艾萊州男人會館</li><li>母系社會</li><li>在地微訪談</li></ul>
+          </article>
+          <article class="esg-card">
+            <span class="esg-letter">G</span>
+            <h3>治理 Governance</h3>
+            <p>理解「帛琉宣言 Palau Pledge」與傳統「Bul 禁漁制度」如何透過法規與社區共治落實。</p>
+            <ul><li>Palau Pledge</li><li>Bul 禁漁</li><li>臺帛合作</li></ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRAINING ============ -->
+    <section id="training" class="section bg-white">
+      <div class="container-x">
+        <div class="training-head" data-reveal>
+          <p class="eyebrow text-ocean">行前培訓・必須出席</p>
+          <h2 class="section-title">出發前，先上一天課。</h2>
+          <p class="section-lead" id="training-meta"></p>
+          <div class="training-tags" id="training-focus"></div>
+        </div>
+        <ol class="timeline" id="training-list"></ol>
+      </div>
+    </section>
+
+    <!-- ============ PLANNER (main + sidebar) ============ -->
+    <section id="planner" class="section bg-mist">
+      <div class="container-x planner-grid">
+        <div class="planner-main">
+
+          <!-- 每日行程 -->
+          <div id="itinerary" class="block">
+            <div class="block-head" data-reveal>
+              <p class="eyebrow text-ocean">每日行程</p>
+              <h2 class="section-title">點一個日期。</h2>
+            </div>
+            <div class="day-menu-wrap" data-reveal>
+              <div class="day-menu" id="day-menu" role="tablist" aria-label="行程日期"></div>
+            </div>
+            <article class="day-panel" id="day-panel" role="tabpanel" aria-live="polite"></article>
+          </div>
+
+          <!-- 行前清單 -->
+          <div id="checklist" class="block">
+            <div class="block-head" data-reveal>
+              <p class="eyebrow text-ocean">行前準備清單</p>
+              <h2 class="section-title">打包，逐項勾選。</h2>
+              <div class="progress" aria-hidden="true"><span id="check-bar"></span></div>
+              <p class="muted" id="check-count"></p>
+            </div>
+            <div class="check-groups" id="check-groups"></div>
+            <form class="inline-form" id="check-add" data-reveal>
+              <input type="text" id="check-new" placeholder="新增自己的項目，例如：浮潛面鏡" maxlength="60" aria-label="新增清單項目" />
+              <button class="btn btn-dark" type="submit">新增</button>
+              <button class="btn btn-ghost-dark" type="button" id="check-reset">全部取消勾選</button>
+            </form>
+          </div>
+
+          <!-- 收支記帳 -->
+          <div id="ledger" class="block">
+            <div class="block-head" data-reveal>
+              <p class="eyebrow text-ocean">收支記帳</p>
+              <h2 class="section-title">每一筆，都記下來。</h2>
+            </div>
+            <div class="ledger-stats" id="ledger-stats" data-reveal></div>
+            <form class="ledger-form card" id="ledger-form" data-reveal>
+              <label>日期<select id="lg-date"></select></label>
+              <label>類型
+                <select id="lg-type"><option value="out">支出</option><option value="in">收入</option></select>
+              </label>
+              <label>類別
+                <select id="lg-cat">
+                  <option>餐飲</option><option>交通</option><option>門票活動</option><option>紀念品</option><option>網卡通訊</option><option>零用金</option><option>其他</option>
+                </select>
+              </label>
+              <label>金額<input type="number" id="lg-amt" min="0" step="0.01" required placeholder="0" /></label>
+              <label>幣別
+                <select id="lg-cur"><option value="USD">USD</option><option value="TWD">TWD</option></select>
+              </label>
+              <label class="span-2">備註<input type="text" id="lg-note" maxlength="60" placeholder="例如：早市椰子水" /></label>
+              <button class="btn btn-dark span-full" type="submit">新增一筆</button>
+            </form>
+            <div class="ledger-toolbar" data-reveal>
+              <label class="switch"><input type="checkbox" id="lg-filter" /> 只看目前選取的日期</label>
+            </div>
+            <ul class="ledger-list" id="ledger-list"></ul>
+          </div>
+
+          <!-- 心得筆記 -->
+          <div id="notes" class="block">
+            <div class="block-head" data-reveal>
+              <p class="eyebrow text-ocean">心得筆記</p>
+              <h2 class="section-title">五感永續地圖。</h2>
+              <p class="section-lead">依「看見、聽見、體驗到的 ESG」記錄當天田野。內容只存在你的瀏覽器，會自動儲存。</p>
+            </div>
+            <div class="card notes-card" data-reveal>
+              <div class="notes-head">
+                <strong id="notes-day"></strong>
+                <span class="muted" id="notes-saved">已自動儲存</span>
+              </div>
+              <label>看見 See<textarea id="note-see" rows="3" placeholder="例如：貼著帛琉宣言的環保水瓶"></textarea></label>
+              <label>聽見 Hear<textarea id="note-hear" rows="3" placeholder="例如：導覽員說起 Bul 禁漁的故事"></textarea></label>
+              <label>體驗 Feel<textarea id="note-feel" rows="3" placeholder="例如：親手野放硨磲貝的感受"></textarea></label>
+              <label>今日心得<textarea id="note-free" rows="5" placeholder="自由書寫…"></textarea></label>
+              <div class="notes-actions">
+                <button class="btn btn-ghost-dark" type="button" id="notes-export">下載全部筆記（.txt）</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ============ SIDEBAR：每日預計消費試算 ============ -->
+        <aside class="budget" id="budget" aria-label="每日預計消費試算">
+          <div class="budget-inner">
+            <div class="budget-top">
+              <div>
+                <p class="eyebrow text-ocean">側欄試算</p>
+                <h3 class="budget-title">每日預計消費</h3>
+              </div>
+              <button class="budget-close" type="button" aria-label="關閉試算">×</button>
+            </div>
+
+            <div class="budget-block">
+              <label class="field">匯率（1 USD = ? TWD）
+                <input type="number" id="bd-rate" min="1" step="0.01" />
+              </label>
+              <p class="tiny muted">預設值僅供參考，請依出發前銀行牌告匯率修改。</p>
+            </div>
+
+            <!-- 方式一：總預算平均 -->
+            <div class="budget-block">
+              <p class="budget-sub">① 總預算平均法</p>
+              <div class="field-row">
+                <label class="field grow">總預算<input type="number" id="bd-total" min="0" step="1" /></label>
+                <label class="field">幣別
+                  <select id="bd-total-cur"><option value="TWD">TWD</option><option value="USD">USD</option></select>
+                </label>
+              </div>
+              <label class="field">天數<input type="number" id="bd-days" min="1" max="60" step="1" /></label>
+              <div class="big-num">
+                <span class="label">每天可花</span>
+                <span id="bd-avg-usd">$0</span>
+                <span class="muted" id="bd-avg-twd">≈ NT$0</span>
+              </div>
+            </div>
+
+            <!-- 方式二：逐日分類 -->
+            <div class="budget-block">
+              <p class="budget-sub">② 逐日分類法 <span class="muted" id="bd-day-label"></span></p>
+              <div class="cat-grid" id="bd-cats"></div>
+              <div class="big-num">
+                <span class="label">本日預計（USD）</span>
+                <span id="bd-day-usd">$0</span>
+                <span class="muted" id="bd-day-twd">≈ NT$0</span>
+              </div>
+              <div class="bd-compare" id="bd-compare"></div>
+            </div>
+
+            <!-- 全程彙總 -->
+            <div class="budget-block">
+              <p class="budget-sub">全程彙總</p>
+              <dl class="sum-list" id="bd-summary"></dl>
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <button class="budget-fab" id="budget-fab" type="button" aria-controls="budget" aria-expanded="false">
+        <span>每日預算</span><strong id="fab-amt">$0</strong>
+      </button>
+      <div class="budget-backdrop" id="budget-backdrop" hidden></div>
+    </section>
+
+    <!-- ============ CAUTIONS ============ -->
+    <section id="cautions" class="section bg-ink-sec">
+      <div class="container-x">
+        <div class="block-head" data-reveal>
+          <p class="eyebrow text-ocean-light">使用注意</p>
+          <h2 class="section-title text-white">做一個有責任感的<br>國際青年。</h2>
+        </div>
+        <div class="caution-grid" id="caution-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-x">
+      <p>N-10-3 帛琉南島永續實踐計畫・學員行程網站（vibe coding 期中作業）</p>
+      <p class="muted">行程內容依教育部青年發展署公告簡章整理，實際以主辦單位通知為準。清單、記帳與筆記資料僅儲存在你的瀏覽器。</p>
+      <details class="credits">
+        <summary>圖片來源與授權</summary>
+        <ul id="credits-list"></ul>
+      </details>
+      <a href="#hero" class="back-top" data-scroll>回到頂端 ↑</a>
+    </div>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/motion@11.11.13/dist/motion.js"></script>
+
+  <!-- App -->
+  <script src="js/data.js"></script>
+  <script src="js/images.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/motion.js"></script>
+</body>
+</html>

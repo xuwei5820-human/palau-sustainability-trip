@@ -1,0 +1,10 @@
+# 課程原始資料不上傳
+*.pdf
+製作規範要求.png
+
+# 本機工具設定
+.claude/
+
+# 系統檔
+.DS_Store
+Thumbs.db
